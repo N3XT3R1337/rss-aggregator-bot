@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rss-aggregator-bot"
+version = "1.0.0"
+description = "RSS feed aggregator Telegram bot with keyword filtering, scheduling, channel grouping, OPML import/export, and digest mode"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "panaceya (N3XT3R1337)"},
+]
+dependencies = [
+    "aiogram>=3.4.0,<4.0.0",
+    "feedparser>=6.0.0",
+    "APScheduler>=3.10.0,<4.0.0",
+    "SQLAlchemy>=2.0.0",
+    "aiosqlite>=0.19.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "aiosqlite>=0.19.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
